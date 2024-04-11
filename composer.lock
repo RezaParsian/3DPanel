@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c133b312fe180afc0f2b635022ad80ac",
+    "content-hash": "edd508d632fc40bd669fcde7f573367c",
     "packages": [
         {
             "name": "brick/math",
@@ -3181,6 +3181,55 @@
                 }
             ],
             "time": "2023-11-08T05:53:05+00:00"
+        },
+        {
+            "name": "rp76/laravelpack",
+            "version": "0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RezaParsian/LaravelPack.git",
+                "reference": "ac5c89ce964d0bd04302dd01294f0227cefe9652"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RezaParsian/LaravelPack/zipball/ac5c89ce964d0bd04302dd01294f0227cefe9652",
+                "reference": "ac5c89ce964d0bd04302dd01294f0227cefe9652",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "Rp76\\LaravelPack\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "RezaParsian",
+                    "email": "rezaparsian76@gmail.com",
+                    "homepage": "https://rp76.ir"
+                }
+            ],
+            "description": "This package bunch of necessary item for laravel",
+            "homepage": "https://github.com/RezaParsian/Guzzle",
+            "keywords": [
+                "api",
+                "response"
+            ],
+            "support": {
+                "issues": "https://github.com/RezaParsian/LaravelPack/issues",
+                "source": "https://github.com/RezaParsian/LaravelPack/tree/v0.2"
+            },
+            "time": "2024-03-19T11:09:27+00:00"
         },
         {
             "name": "symfony/clock",

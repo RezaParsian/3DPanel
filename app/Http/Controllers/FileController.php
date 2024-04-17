@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreFileRequest;
 use App\Http\Requests\UpdateFileRequest;
+use App\Http\Resources\FileResource;
 use App\Http\Resources\FileResourceCollection;
 use App\Models\File;
 use App\Models\Project;
@@ -18,6 +19,8 @@ class FileController extends Controller
             Route::get('{project}', [self::class, 'index']);
             Route::post('{project}', [self::class, 'store']);
 
+            Route::get('file/{file:code}', [self::class, 'show'])->withoutMiddleware('auth:sanctum');
+
             Route::put('{project}/file/{file}', [self::class, 'update']);
             Route::delete('{project}/file/{file}', [self::class, 'destroy']);
         });
@@ -26,7 +29,7 @@ class FileController extends Controller
     public function index($id)
     {
         $files = File::where(File::PROJECT_ID, $id)
-            ->select(['id', 'project_id', 'title', 'path', 'created_at'])
+            ->select(['id', 'project_id', 'title', 'path','code', 'created_at'])
             ->with('project')
             ->pipe([
                 SortPipe::class
@@ -40,6 +43,11 @@ class FileController extends Controller
         File::create($request->validated());
 
         return success(null, status: 201);
+    }
+
+    public function show( Project $project, File $file)
+    {
+        return success(FileResource::make($file));
     }
 
     public function update(UpdateFileRequest $request, Project $project, File $file)

@@ -20,6 +20,7 @@ class FileResource extends JsonResource
             'project' => ProjectResource::make($this->whenLoaded('project')),
             'path' => asset($this->path),
             'data' => $this->data,
+            'code' => $this->code,
             'created_at' => $this->created_at->toDateTimeString()
         ];
     }

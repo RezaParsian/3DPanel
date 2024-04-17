@@ -9,6 +9,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
  * @property mixed $id
  * @property mixed $title
  * @property mixed $created_at
+ * @property mixed $description
  */
 class ProjectResource extends JsonResource
 {
@@ -22,6 +23,7 @@ class ProjectResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
+            'description' => $this->description,
             'user' => UserResource::make($this->whenLoaded('user')),
             'created_at' => $this->created_at->toDateTimeString()
         ];

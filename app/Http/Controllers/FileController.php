@@ -40,14 +40,14 @@ class FileController extends Controller
 
     public function store(StoreFileRequest $request, Project $project)
     {
-        File::create($request->validated());
+        $file=File::create($request->validated());
 
-        return success(null, status: 201);
+        return success(FileResource::make($file->load('project')), status: 201);
     }
 
     public function show( Project $project, File $file)
     {
-        return success(FileResource::make($file));
+        return success(FileResource::make($file->load('project')));
     }
 
     public function update(UpdateFileRequest $request, Project $project, File $file)

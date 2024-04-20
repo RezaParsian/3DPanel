@@ -35,6 +35,7 @@ class StoreFileRequest extends FormRequest
         return array_merge(parent::validated($key, $default), [
             File::PROJECT_ID => $this->project->id,
             File::PATH => uploadFile($this->file('file'), 'uploads/projects/'),
+            File::CODE => uniqid(),
         ]);
     }
 }

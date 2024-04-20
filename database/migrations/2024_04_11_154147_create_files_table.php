@@ -13,6 +13,7 @@ return new class extends Migration {
         Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('project_id');
+            $table->string('code', 50);
             $table->string('title');
             $table->string('path',50);
             $table->json('data')->nullable();

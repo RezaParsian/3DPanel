@@ -17,12 +17,14 @@ class File extends Model
 
     const
         PROJECT_ID = 'project_id',
+        CODE = 'code',
         TITLE = 'title',
         PATH = 'path',
         DATA = 'data';
 
     protected $fillable = [
         self::PROJECT_ID,
+        self::CODE,
         self::TITLE,
         self::PATH,
         self::DATA,

@@ -22,7 +22,8 @@ class ProjectStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            Project::TITLE => ['required', 'string', 'max:256']
+            Project::TITLE => ['required', 'string', 'max:256'],
+            Project::DESCRIPTION => ['required', 'string', 'max:' . (1024 * 4)],
         ];
     }
 

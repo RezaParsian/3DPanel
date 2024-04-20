@@ -16,10 +16,12 @@ class Project extends Model
 
     const
         USER_ID='user_id',
+        DESCRIPTION='description',
         TITLE='title';
 
     protected $fillable=[
         self::USER_ID,
-        self::TITLE
+        self::TITLE,
+        self::DESCRIPTION,
     ];
 }

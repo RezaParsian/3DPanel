@@ -16,6 +16,7 @@ class FileResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'title' => $this->title,
             'project_id' => $this->project_id,
             'project' => ProjectResource::make($this->whenLoaded('project')),
             'path' => asset($this->path),

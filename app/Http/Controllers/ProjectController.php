@@ -7,6 +7,7 @@ use App\Http\Resources\ProjectResource;
 use App\Http\Resources\ProjectResourceCollection;
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
+use Rp76\LaravelPack\Pipes\MinePipe;
 use Rp76\LaravelPack\Pipes\SortPipe;
 
 class ProjectController extends Controller
@@ -25,6 +26,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::pipe([
+            MinePipe::class,
             SortPipe::class
         ])->page();
 
